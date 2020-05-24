@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+
+img{
+    height: 300px;
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+}
+
+form{
+    display: flex;
+    margin: 10px auto;
+    justify-content: space-around;
+    width: 60%;
+    align-items: center;
+}
+
+input{
+    padding: 10px;
+    text-align: left;
+}
+
+select{
+    padding: 10px;
+}
