@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieElement from './MovieElement';
 
 class Search extends React.Component{
 
@@ -6,7 +7,9 @@ class Search extends React.Component{
         super();
         this.state = {
             Title: '',
-            Genre: ''
+            Genre: '',
+            Data: [],
+            searchBy: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.fetchData = this.fetchData.bind(this);
@@ -19,16 +22,27 @@ class Search extends React.Component{
 
         title !== '' ?
         
-        fetch('https://api.themoviedb.org/3/search/movie?&api_key=d8e52cfe853c236aa9202987892815bf&language=en-US&page=1&query='+title)
+        fetch('https://api.themoviedb.org/3/search/movie?&api_key=d8e52cfe853c236aa9202987892815bf&language=en-US&page=1&query='+title+'&sort_by=vote_average.desc&page=1&vote_count.gte=10000')
                 .then(data => data.json())
-                .then(data => console.log(data.results))
+                .then(data => {
+                    this.setState({
+                        Data: data.results,
+                        searchBy: 'Title'
+                    })
+                    console.log(data.results)
+                })
                 .catch(err => console.log(err))
 
                 :
 
-        fetch('https://api.themoviedb.org/3/discover/movie?&api_key=d8e52cfe853c236aa9202987892815bf&language=en-US&page=1&with_genres='+genre)
+        fetch('https://api.themoviedb.org/3/discover/movie?&api_key=d8e52cfe853c236aa9202987892815bf&language=en-US&page=1&with_genres='+genre+'&sort_by=vote_average.desc&vote_count.gte=10000')
                 .then(data => data.json())
-                .then(data => console.log(data.results))
+                .then(data => {
+                    this.setState({
+                        Data: data.results,
+                        searchBy: 'Genre'
+                    })
+                })
                 .catch(err => console.log(err))
              
     }
@@ -48,10 +62,18 @@ class Search extends React.Component{
                 Title: val
             })
 
-        this.fetchData();
+        setTimeout(()=>{
+            this.fetchData();
+        }, 500);
     }
 
     render(){
+
+        const foundMovies = this.state.Data.map((element)=>(
+            <MovieElement key={element.id} data= {element} searchBy={this.state.searchBy}/>
+        ));
+
+        foundMovies.length =5;
         return(
             <div>
                 <form>
@@ -82,10 +104,14 @@ class Search extends React.Component{
                         <option value='37'>Western</option>
                     </select>
                 </form>
-
+{/* 
                 <div>
                     <h1>{this.state.Title}</h1>
                     <h1>{this.state.Genre}</h1>
+                </div> */}
+
+                <div>
+                    {foundMovies}
                 </div>
             </div>
 
