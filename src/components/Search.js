@@ -29,13 +29,12 @@ class Search extends React.Component{
                         Data: data.results,
                         searchBy: 'Title'
                     })
-                    console.log(data.results)
                 })
                 .catch(err => console.log(err))
 
                 :
 
-        fetch('https://api.themoviedb.org/3/discover/movie?&api_key=d8e52cfe853c236aa9202987892815bf&language=en-US&page=1&with_genres='+genre+'&sort_by=vote_average.desc&vote_count.gte=10000')
+        fetch('https://api.themoviedb.org/3/discover/movie?&api_key=d8e52cfe853c236aa9202987892815bf&language=en-US&page=1&with_genres='+genre+'&sort_by=vote_average.desc&vote_count.gte=1000')
                 .then(data => data.json())
                 .then(data => {
                     this.setState({
@@ -72,15 +71,18 @@ class Search extends React.Component{
         const foundMovies = this.state.Data.map((element)=>(
             <MovieElement key={element.id} data= {element} searchBy={this.state.searchBy}/>
         ));
-
-        foundMovies.length =5;
+        
+        if(this.state.searchBy === 'Genre')
+        foundMovies.length =15;
+        
+        else
+        foundMovies.length = 1;
         return(
             <div>
                 <form>
                     <input type='text' name='Title' placeholder='Movie Name' onChange={this.handleChange} value={this.state.Title}/>
                     <span>OR</span>
-                    {/* <input type='text' name='Genre' placeholder='Genre' onChange={this.handleChange} value={this.state.Genre}/> */}
-
+                    
                     <select name='Genre' onChange={this.handleChange} value={this.state.Genre}>
                         <option value=''>--- Select A Genre ---</option>
                         <option value='28'>Action</option>
@@ -104,11 +106,6 @@ class Search extends React.Component{
                         <option value='37'>Western</option>
                     </select>
                 </form>
-{/* 
-                <div>
-                    <h1>{this.state.Title}</h1>
-                    <h1>{this.state.Genre}</h1>
-                </div> */}
 
                 <div>
                     {foundMovies}
