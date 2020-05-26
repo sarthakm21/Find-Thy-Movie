@@ -1,11 +1,39 @@
 body{
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: antiquewhite;
+}
+
+input, select{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 5px;
+}
+
+input{
+    border: none;
+}
+nav{
+    background-color: black;
+    color:white;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+nav .icon{
+    width: 60px;
+    height: 60px;
+    padding-right: 30px;
+}
+
+nav h1{
+    font-weight: 400;
+    margin: 0;
 }
 
 img{
-    height: 300px;
-    width: 80%;
+    height: 400px;
+    width: 100%;
     display: flex;
     margin: 0 auto;
 }
@@ -27,33 +55,15 @@ select{
     padding: 10px;
 }
 
-.movieByTitle{
-    width: 60%;
-    margin: 100px auto;
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.movieByGenre{
-    width: 60%;
-    margin: 100px auto;
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-}
-.posterGenre{
-    width: 200px;
-    margin-left: 0;
-}
-
 .posterTitle{
-    width: 200px;
+    width: 250px;
+    height: 300px;
     margin: 5px auto;
 }
+
 .similarMovie{
+    background-color: rgb(145, 112, 112);
+    color: white;
     width: 60%;
     margin: 100px auto;
     border: 1px solid black;
@@ -66,10 +76,48 @@ select{
 h1{
     text-align: center;
     font-weight: 400;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .KnowMore{
     display: block;
     border: 1px solid black;
     margin: 20px 30px;
+}
+
+.info{
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.info p{
+    margin: auto;
+    width: 60%;
+}
+
+.info img{
+    margin-left: 0;
+}
+
+.stats{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    justify-content: flex-end;
+    padding-right: 60px;
+}
+
+.stats span{
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+
+.icon{
+    padding: 10px;
+    width: 30px;
+    height: 30px;
 }

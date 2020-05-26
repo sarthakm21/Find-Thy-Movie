@@ -13,6 +13,7 @@ class Search extends React.Component{
         }
         this.handleChange = this.handleChange.bind(this);
         this.fetchData = this.fetchData.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     fetchData(){
@@ -66,6 +67,10 @@ class Search extends React.Component{
         }, 500);
     }
 
+    handleSubmit(event){
+        event.preventDefault();
+    }
+
     render(){
 
         const foundMovies = this.state.Data.map((element)=>(
@@ -79,8 +84,8 @@ class Search extends React.Component{
         foundMovies.length = 1;
         return(
             <div>
-                <form>
-                    <input type='text' name='Title' placeholder='Movie Name' onChange={this.handleChange} value={this.state.Title}/>
+                <form onSubmit={this.handleSubmit}>
+                    <input type='text' name='Title' placeholder='Movie Name' onChange={this.handleChange} value={this.state.Title} />
                     <span>OR</span>
                     
                     <select name='Genre' onChange={this.handleChange} value={this.state.Genre}>
