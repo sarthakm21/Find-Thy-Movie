@@ -40,7 +40,7 @@ img{
 
 form{
     display: flex;
-    margin: 10px auto;
+    margin: 20px auto;
     justify-content: space-around;
     width: 60%;
     align-items: center;
@@ -55,22 +55,23 @@ select{
     padding: 10px;
 }
 
-.posterTitle{
-    width: 250px;
+.posterTitle img{
+    width: 200px;
     height: 300px;
-    margin: 5px auto;
+    margin-left: 10px;
 }
 
 .similarMovie{
-    background-color: rgb(145, 112, 112);
-    color: white;
-    width: 60%;
+    background-color: white;
+    width: 70%;
     margin: 100px auto;
-    border: 1px solid black;
     padding: 20px;
-    border-radius: 10px;
-    display: flexbox;
-    align-items: center;
+    text-align: justify;
+    box-shadow:0px 0px 20px 1px rgba(0,0,0,0.2);
+}
+
+.posterTitle{
+    display: flex;
 }
 
 h1{
@@ -87,32 +88,28 @@ h1{
 }
 
 .info{
-    margin-left: 10px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.info p{
-    margin: auto;
+    margin: 30px auto;
     width: 60%;
 }
 
-.info img{
-    margin-left: 0;
+.info p{
+    margin-bottom: 20px;
 }
 
+hr{
+    margin: 25px auto;
+    width: 80%;
+    color: grey;
+}
 .stats{
     display: flex;
-    align-items: center;
-    margin-left: 5px;
-    justify-content: flex-end;
-    padding-right: 60px;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .stats span{
     display: flex;
     align-items: center;
-    margin-right: 60px;
 }
 
 

@@ -8,22 +8,27 @@ function MovieElement(props){
             props.searchBy === 'Title' ? 
             <div>
                 <div className="similarMovie">
-                    <h1>{props.data.title}</h1>
-                    <div className="info">
+                    <div className="posterTitle">
                         <img src={"https://image.tmdb.org/t/p/original"+props.data.poster_path} className="posterTitle" alt="Movie Poster"/>
-                        <p>{props.data.overview}</p>
+                        <div className="info">
+                            <h1>{props.data.title}</h1>
+                            <p>{props.data.overview}</p>
+                            
+                            <hr />
+
+                            <div className="stats">
+                                <span>
+                                    < FaRegStar className="icon"/>
+                                    <span>{props.data.vote_average}/10</span>
+                                </span>
+                                <span>
+                                    <MdDateRange className="icon" />
+                                    <span>{props.data.release_date}</span>
+                                </span>
+                            </div>
+
+                        </div>
                     </div>
-                    <div className="stats">
-                        <span>
-                            < FaRegStar className="icon"/>
-                            <span>{props.data.vote_average}/10</span>
-                        </span>
-                        <span>
-                            <MdDateRange className="icon" />
-                            <span>{props.data.release_date}</span>
-                        </span>
-                    </div>
-            
                 </div>
 
                 <div>
@@ -32,24 +37,27 @@ function MovieElement(props){
             </div>  :
 
             <div className="similarMovie">
-            <h1>{props.data.title}</h1>
-            <div className="info">
-                <img src={"https://image.tmdb.org/t/p/original"+props.data.poster_path} className="posterTitle" alt="Movie Poster"/>
-                <p>{props.data.overview}</p>
-            </div>
-            <div className="stats">
-                <span>
-                    < FaRegStar className="icon"/>
-                    <span>{props.data.vote_average}/10</span>
-                </span>
+                <div className="posterTitle">
+                    <img src={"https://image.tmdb.org/t/p/original"+props.data.poster_path} className="posterTitle" alt="Movie Poster"/>
+                    <div className="info">
+                        <h1>{props.data.title}</h1>
+                        <p>{props.data.overview}</p>
+                        
+                        <hr />
 
-                <span>
-                    <MdDateRange className="icon" />
-                    <span>{props.data.release_date}</span>
-                </span>
-                
-            </div>
-            
+                        <div className="stats">
+                            <span>
+                                < FaRegStar className="icon"/>
+                                <span>{props.data.vote_average}/10</span>
+                            </span>
+                            <span>
+                                <MdDateRange className="icon" />
+                                <span>{props.data.release_date}</span>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         )
