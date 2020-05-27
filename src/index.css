@@ -74,6 +74,22 @@ select{
     display: flex;
 }
 
+.hero{
+    height: 400px;
+    width: 100%;
+    background-image: url("https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683__340.png");
+    position: relative;
+}
+
+.hero h1{
+    position: absolute;
+    top: 50px; 
+    left: 0; 
+    width: 100%;    
+    font-weight: normal;
+    font-size: 3em; 
+}
+
 h1{
     text-align: center;
     font-weight: 400;

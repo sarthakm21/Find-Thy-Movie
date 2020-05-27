@@ -1,21 +1,15 @@
 import React from 'react';
-import { MdMovie } from "react-icons/md";
-
 
 class Header extends React.Component{
     render(){
         return(
             <header>
-                <nav>
-                    <MdMovie className="icon"/>
+                <div className="hero">
                     <h1>Find Thy Movie</h1>
-                </nav>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1518534532449-21e053ec3dcd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80" alt="Movie related background"/>
+                    <img src="https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683__340.png" alt="Movie related background"/>
                 </div>
             </header>
         )
     }
 }
-
 export default Header;
