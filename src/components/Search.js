@@ -85,10 +85,10 @@ class Search extends React.Component{
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='Title' placeholder='Movie Name' onChange={this.handleChange} value={this.state.Title} />
-                    <span>OR</span>
+                    <input type='text' name='Title' placeholder='Movie Name' onChange={this.handleChange} value={this.state.Title}  className="searchForm"/>
+                    <span className="searchForm">OR</span>
                     
-                    <select name='Genre' onChange={this.handleChange} value={this.state.Genre}>
+                    <select name='Genre' onChange={this.handleChange} value={this.state.Genre} className="searchForm">
                         <option value=''>--- Select A Genre ---</option>
                         <option value='28'>Action</option>
                         <option value='12'>Adventure</option>
