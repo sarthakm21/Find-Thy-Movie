@@ -1,13 +1,13 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component{
     render(){
         return(
             <header>
-                {/* <nav>
-                    <Link to="/watchlist">Watchlist</Link>
-                </nav> */}
+                <nav>
+                    <Link to="/wishlist">Wishlist</Link>
+                </nav>
                 <div className="hero">
                     <h1>Find Thy Movie</h1>
                     <img src = "https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683__340.png" alt="Movie background"/>
