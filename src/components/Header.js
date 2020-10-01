@@ -9,8 +9,8 @@ class Header extends React.Component{
                     <Link to="/watchlist">Watchlist</Link>
                 </nav> */}
                 <div className="hero">
-                    <h1>Find Thy Movie</h1>
-                    <img src = "https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683__340.png" alt="Movie background"/>
+                    <h1 style={{color: "yellow", fontSize: "80px"}}>Find Thy Movie</h1>
+                    <img src = "https://cdn.hipwallpaper.com/i/78/92/5D4wHq.jpg" style={{objectFit: "cover"}} alt="Movie background"/>
                     {/* <img src="https://i.pinimg.com/originals/a5/11/1d/a5111dd02c562d09778099b673cc47b8.jpg" alt="Movie related background"/> */}
                     {/* <img src="https://images.wallpapersden.com/image/download/star-wars-the-mandalorian_66569_2560x1080.jpg" alt="Movie related background"/> */}
                 </div>
